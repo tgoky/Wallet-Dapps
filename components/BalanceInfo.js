@@ -41,8 +41,18 @@ export const BalanceInfo = ({ title, displayAmount, changePct, containerStyle })
                         
                     }}
                     />
-
                 }
+                <Text
+                style={{
+                    marginLeft: SIZES.base,
+                    alignSelf: 'flex-end',
+                    color: (changePct == 0) ? COLORS.lightGray3
+                    : (changePct > 0) ? COLORS.lightGreen :
+                    COLORS.darkRed,
+                    ...FONTS.h4
+                }}>
+                    {changePct.toFixed(2)}%
+                </Text>
         </View>
         </View>
     )
