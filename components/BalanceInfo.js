@@ -19,7 +19,7 @@ export const BalanceInfo = ({ title, displayAmount, changePct, containerStyle })
             }}
             >
                 <Text style={{ ...FONTS.h3, color: COLORS.lightGray3}}>$</Text>
-                <Text style={{ ...FONTS.h2, color: COLORS.white}}>{displayAmount}</Text>
+                <Text style={{ ...FONTS.h2, color: COLORS.white}}>{displayAmount.toLocaleString()}</Text>
                 <Text style={{ color: COLORS.lightGray3, ...FONTS.h3}}></Text>
             </View>
             <View style={{
