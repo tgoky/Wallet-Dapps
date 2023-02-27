@@ -37,6 +37,10 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins}) => {
 
    let totalWallet = myHoldings.reduce((a, b) => a + (b.total || 0), 0)
 
+   let valueChange = myHoldings.reduce((a, b) => a + (b.holding_value_change_7d || 0), 0)
+
+   let percChange = valueChange / (totalWallet - valueChange) * 100
+
     const modalAnimatedValue = React.useRef(new Animated.Value(0)).current;
 
     React.useEffect(() => {
@@ -68,7 +72,7 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins}) => {
                 <BalanceInfo 
                 title="Wallet Balance"
                 displayAmount={totalWallet}
-                changePct= {2.30}
+                changePct= {percChange}
                 containerStyle={{
                     marginTop: 4,
                 }}/>

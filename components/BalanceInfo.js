@@ -36,7 +36,7 @@ export const BalanceInfo = ({ title, displayAmount, changePct, containerStyle })
                         width: 10,
                         height: 10,
                         alignSelf: 'center',
-                        tintColor: (changePct > 0) ? COLORS.lightGreen : COLORS.darkRed,
+                        tintColor: (changePct > 0) ? COLORS.lightGreen : COLORS.lightDank,
                         transform: (changePct > 0) ? [{ rotate: '134deg' }] : [{ rotate: '-125deg'}]
                         
                     }}
@@ -48,7 +48,7 @@ export const BalanceInfo = ({ title, displayAmount, changePct, containerStyle })
                     alignSelf: 'flex-end',
                     color: (changePct == 0) ? COLORS.lightGray3
                     : (changePct > 0) ? COLORS.lightGreen :
-                    COLORS.darkRed,
+                    COLORS.lightBrown,
                     ...FONTS.h4
                 }}>
                     {changePct.toFixed(2)}%
