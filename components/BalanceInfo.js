@@ -53,6 +53,17 @@ export const BalanceInfo = ({ title, displayAmount, changePct, containerStyle })
                 }}>
                     {changePct.toFixed(2)}%
                 </Text>
+
+                <Text
+                style={{
+                    marginLeft: SIZES.radius,
+                    alignSelf: 'flex-end',
+                    color: COLORS.lightGray3,
+                    ...FONTS.h5,
+                    top: -3 
+                }}>
+                    7d change
+                </Text>
         </View>
         </View>
     )
