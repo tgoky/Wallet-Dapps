@@ -35,6 +35,8 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins}) => {
     }, [])
    )
 
+   let totalWallet = myHoldings.reduce((a, b) => a + (b.total || 0), 0)
+
     const modalAnimatedValue = React.useRef(new Animated.Value(0)).current;
 
     React.useEffect(() => {
@@ -65,7 +67,7 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins}) => {
                 {/* Balance info */}
                 <BalanceInfo 
                 title="Wallet Balance"
-                displayAmount="45,000"
+                displayAmount={totalWallet}
                 changePct= {2.30}
                 containerStyle={{
                     marginTop: 4,

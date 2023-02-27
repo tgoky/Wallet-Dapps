@@ -43,7 +43,7 @@ perPage = 10, page = 1) {
         }).then((response) => {
             console.log("GetHoldings")
             console.log(response)
-            if(response.state == 200 ) {
+            if(response.status == 200 ) {
                 // Massage data
                 let myHoldings = response.data.map((item) => {
                 // Retrieve our current holdings
@@ -121,7 +121,7 @@ export function getCoinMarket(currency = "usd", orderBy = "market_cap_desc",
         }).then((response) => {
             console.log("GetCoinMarket")
             console.log(response)
-            if(response.state == 200 ) {
+            if(response.status == 200 ) {
                 dispatch(getCoinMarketSuccess(response.data))
     } else {
         dispatch(getCoinMarketFailure(response.data))
