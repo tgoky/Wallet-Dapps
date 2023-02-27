@@ -13,6 +13,7 @@ import { WithdrawTextButton, DepositTextButton } from "../components/IconTextBut
 import { connect } from "react-redux";
 import { getHoldings, getCoinMarket } from "../stores/market/marketActions";
 import { useFocusEffect } from "@react-navigation/native";
+import { BalanceInfo } from "../components/BalanceInfo";
 
 import dummyData from "../constants/dummy";
 import { COLORS, FONTS, SIZES, icons, images } from '../constants';
@@ -51,9 +52,43 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins}) => {
    
     )
 
+    function renderWalletInfoSection() {
+        return (
+            <View style={{
+                paddingHorizontal: SIZES.padding,
+                borderBottomLeftRadius: 25,
+                borderBottomRightRadius: 25,
+                backgroundColor: COLORS.gray,
+                top: 3,
+            }}
+            >
+                {/* Balance info */}
+                <BalanceInfo 
+                title="Your Wallet"
+                displayAmountn="45,000"
+                changedPct="2.30"
+                containerStyle={{
+                    marginTop: 9,
+                }}/>
+
+            </View>
+        )
+    }
+
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
+       {/* // header - wallet info */}
+       <View>
+             {renderWalletInfoSection()}
+             </View>
+
+
+      {/* chart */}
+
+      {/* top cryptocurrencies */}
+      
+      
            <Animated.View
            style={{
             position: 'absolute',
@@ -64,13 +99,10 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins}) => {
             backgroundColor: COLORS.darkGreen
            }}
            >
-            <DepositTextButton
-           
+            <DepositTextButton   
             />
             <View style={{bottom: -10}}>
-            <WithdrawTextButton 
-            
-           
+            <WithdrawTextButton  
         />
         </View>
            </Animated.View>
