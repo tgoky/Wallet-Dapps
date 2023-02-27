@@ -64,9 +64,9 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins}) => {
             >
                 {/* Balance info */}
                 <BalanceInfo 
-                title="Your Wallet"
+                title="Wallet Balance"
                 displayAmount="45,000"
-                changedPct="2.30"
+                changePct= "2.30"
                 containerStyle={{
                     marginTop: 4,
                 }}/>
