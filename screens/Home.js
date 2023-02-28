@@ -64,8 +64,8 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins}) => {
         return (
             <View style={{
                 paddingHorizontal: SIZES.padding,
-                borderBottomLeftRadius: 25,
-                borderBottomRightRadius: 25,
+                borderBottomLeftRadius: 50,
+                borderBottomRightRadius: 55,
                 backgroundColor: COLORS.gray,
                 top: 3,
             }}
@@ -79,37 +79,24 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins}) => {
                     marginTop: 4,
                 }}
                 />
-            </View>
-        )
-    }
 
-
-    function BuySwapButton() {
-
-
-        return (
-            <View>
-    { /* Buttons  */}
                <View
                style={{
                 flexDirection: "row",
-                marginTop: 30,
-                marginBottom: 30,
+                marginTop: 12,
+                marginBottom: 12,
                 paddingHorizontal: SIZES.radius
                }}>
                 <BuyButton 
-                // onpress goes here 
+                // onpress goes here
                 />
                   <SwapButton
-               
-                // onpress goes here 
                 />
                </View>
-
             </View>
         )
-
     }
+
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
@@ -118,15 +105,11 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins}) => {
              {renderWalletInfoSection()}
              </View>
              <View style={{top: -23, }}>
-                {BuySwapButton()}
+             
              </View>
-
-
       {/* chart */}
 
-      {/* top cryptocurrencies */}
-      
-      
+      {/* top cryptocurrencies */}      
            <Animated.View
            style={{
             position: 'absolute',

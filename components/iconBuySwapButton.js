@@ -16,9 +16,9 @@ export const BuyButton = () => {
             justifyContent: "center",
             height: 38,
             width: 125,
-            left: 49,
+            left: 23,
             borderRadius: SIZES.radius,
-            backgroundColor: COLORS.darkGreen,
+            backgroundColor: COLORS.black,
         }}
      
         >
@@ -59,9 +59,9 @@ export const SwapButton = () => {
             justifyContent: "center",
             height: 38,
             width: 125,
-            left: 58,
+            left: 29,
             borderRadius: SIZES.radius,
-            backgroundColor: COLORS.darkGreen,
+            backgroundColor: COLORS.black,
         }}
      
         >
