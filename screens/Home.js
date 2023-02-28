@@ -15,6 +15,8 @@ import { getHoldings, getCoinMarket } from "../stores/market/marketActions";
 import { useFocusEffect } from "@react-navigation/native";
 import { BalanceInfo } from "../components/BalanceInfo";
 
+import { BuyButton, SwapButton} from "../components/iconBuySwapButton";
+
 import dummyData from "../constants/dummy";
 import { COLORS, FONTS, SIZES, icons, images } from '../constants';
 
@@ -75,18 +77,48 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins}) => {
                 changePct= {percChange}
                 containerStyle={{
                     marginTop: 4,
-                }}/>
-
+                }}
+                />
             </View>
         )
     }
 
+
+    function BuySwapButton() {
+
+
+        return (
+            <View>
+    { /* Buttons  */}
+               <View
+               style={{
+                flexDirection: "row",
+                marginTop: 30,
+                marginBottom: 30,
+                paddingHorizontal: SIZES.radius
+               }}>
+                <BuyButton 
+                // onpress goes here 
+                />
+                  <SwapButton
+               
+                // onpress goes here 
+                />
+               </View>
+
+            </View>
+        )
+
+    }
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
        {/* // header - wallet info */}
        <View>
              {renderWalletInfoSection()}
+             </View>
+             <View style={{top: -23, }}>
+                {BuySwapButton()}
              </View>
 
 
